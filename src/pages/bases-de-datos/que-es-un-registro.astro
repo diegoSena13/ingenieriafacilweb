@@ -1,0 +1,80 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+---
+
+<BaseLayout
+  title="¿Qué es un registro en una base de datos? Explicación sencilla | Ingenieria Facil Web"
+  description="Aprende qué es un registro en una base de datos, cómo se almacena la información y cuál es su relación con las tablas."
+>
+  <main>
+    <h1>¿Qué es un registro en una base de datos?</h1>
+
+    <p>
+      Un registro es una fila dentro de una tabla de base de datos. Cada registro
+      contiene información completa sobre un elemento específico, como un cliente,
+      un producto, un empleado o un pedido.
+    </p>
+
+    <h2>¿Para qué sirve un registro?</h2>
+
+    <p>
+      Los registros permiten almacenar información individual dentro de una tabla.
+      Cada fila representa una entidad única y contiene valores para cada una de
+      las columnas definidas.
+    </p>
+
+    <h2>Ejemplo de un registro</h2>
+
+    <p>
+      Supongamos que tenemos la siguiente tabla de clientes:
+    </p>
+
+    <pre>
+ID_Cliente | Nombre | Ciudad
+1          | Juan   | Bogotá
+2          | María  | Medellín
+3          | Carlos | Cali
+    </pre>
+
+    <p>
+      El registro correspondiente a Juan sería:
+    </p>
+
+    <pre>
+ID_Cliente: 1
+Nombre: Juan
+Ciudad: Bogotá
+    </pre>
+
+    <h2>Diferencia entre registro y tabla</h2>
+
+    <p>
+      Una tabla contiene múltiples registros. Mientras que la tabla organiza la
+      información completa, cada registro representa una fila individual con datos
+      específicos.
+    </p>
+
+    <h2>Importancia de los registros</h2>
+
+    <ul>
+      <li>Permiten almacenar información organizada.</li>
+      <li>Facilitan la búsqueda de datos.</li>
+      <li>Ayudan a gestionar grandes volúmenes de información.</li>
+      <li>Son la unidad básica de almacenamiento en una tabla.</li>
+    </ul>
+
+    <h2>Relación con las claves primarias</h2>
+
+    <p>
+      Cada registro suele identificarse mediante una clave primaria, que permite
+      diferenciarlo de los demás registros de la tabla.
+    </p>
+
+    <h2>Conclusión</h2>
+
+    <p>
+      Los registros son las filas que almacenan la información dentro de una tabla.
+      Comprender este concepto es fundamental para aprender bases de datos y SQL.
+    </p>
+  </main>
+</BaseLayout>

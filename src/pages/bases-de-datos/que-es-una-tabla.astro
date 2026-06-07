@@ -1,0 +1,90 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+---
+
+<BaseLayout
+  title="¿Qué es una tabla en una base de datos? Explicación sencilla | Ingenieria Facil Web"
+  description="Aprende qué es una tabla en una base de datos, cómo se organizan los datos y por qué es uno de los conceptos fundamentales de las bases de datos relacionales."
+>
+  <main>
+    <h1>¿Qué es una tabla en una base de datos?</h1>
+
+    <p>
+      Una tabla es una estructura utilizada para almacenar información dentro
+      de una base de datos. Los datos se organizan en filas y columnas,
+      permitiendo guardar y consultar información de manera ordenada y eficiente.
+    </p>
+
+    <h2>¿Para qué sirve una tabla?</h2>
+
+    <p>
+      Las tablas permiten organizar la información relacionada con una entidad
+      específica, como clientes, productos, empleados o pedidos. Gracias a ellas,
+      es posible almacenar grandes cantidades de datos de forma estructurada.
+    </p>
+
+    <h2>¿Cómo está compuesta una tabla?</h2>
+
+    <p>
+      Una tabla está formada por columnas y filas:
+    </p>
+
+    <ul>
+      <li><strong>Columnas:</strong> representan los atributos o características de los datos.</li>
+      <li><strong>Filas:</strong> representan los registros almacenados.</li>
+    </ul>
+
+    <h2>Ejemplo de una tabla</h2>
+
+    <p>
+      La siguiente tabla almacena información de clientes:
+    </p>
+
+    <pre>
+ID_Cliente | Nombre | Ciudad
+1          | Juan   | Bogotá
+2          | María  | Medellín
+3          | Carlos | Cali
+    </pre>
+
+    <p>
+      Cada fila corresponde a un cliente diferente y cada columna almacena un tipo
+      específico de información.
+    </p>
+
+    <h2>Relación entre tablas y registros</h2>
+
+    <p>
+      Las tablas almacenan registros. Cada registro contiene información sobre un
+      elemento específico. Por ejemplo, en una tabla de clientes, cada fila representa
+      un cliente distinto.
+    </p>
+
+    <h2>Relación con las claves primarias y foráneas</h2>
+
+    <p>
+      Las tablas suelen incluir <a href="/bases-de-datos/que-es-una-clave-primaria">claves primarias</a> para identificar registros únicos
+      y <a href="/bases-de-datos/que-es-una-clave-foranea">claves foráneas</a> para relacionar información entre diferentes tablas de la
+      base de datos.
+    </p>
+
+    <h2>Ventajas de utilizar tablas</h2>
+
+    <ul>
+      <li>Organizan la información de manera estructurada.</li>
+      <li>Facilitan las búsquedas y consultas.</li>
+      <li>Permiten relacionar datos entre diferentes tablas.</li>
+      <li>Ayudan a mantener la integridad de la información.</li>
+      <li>Facilitan la administración de grandes volúmenes de datos.</li>
+    </ul>
+
+    <h2>Conclusión</h2>
+
+    <p>
+      Las tablas son uno de los elementos más importantes de una base de datos.
+      Comprender cómo funcionan es fundamental para aprender SQL, diseñar bases
+      de datos relacionales y trabajar con sistemas gestores como SQL Server,
+      MySQL o PostgreSQL.
+    </p>
+  </main>
+</BaseLayout>

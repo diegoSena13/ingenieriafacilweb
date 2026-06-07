@@ -1,0 +1,84 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+---
+
+<BaseLayout
+  title="¿Qué es una clave foránea? Explicación sencilla | Ingenieria Facil Web"
+  description="Aprende qué es una clave foránea, para qué sirve y cómo se utiliza para relacionar tablas en una base de datos."
+>
+  <main>
+    <h1>¿Qué es una clave foránea?</h1>
+
+    <p>
+      Una clave foránea (Foreign Key) es un campo o conjunto de campos que
+      establece una relación entre dos tablas de una base de datos. Su función
+      principal es conectar información relacionada y mantener la integridad de los datos.
+    </p>
+
+    <h2>¿Para qué sirve una clave foránea?</h2>
+
+    <p>
+      Las claves foráneas permiten relacionar registros de diferentes tablas.
+      Gracias a ellas es posible evitar la duplicación de información y garantizar
+      que los datos mantengan una relación válida entre sí.
+    </p>
+
+    <h2>Ejemplo práctico</h2>
+
+    <p>
+      Imaginemos que tenemos dos tablas: Clientes y Pedidos.
+    </p>
+
+    <pre>
+Tabla Clientes
+
+ID_Cliente | Nombre
+1          | Juan
+2          | María
+
+
+Tabla Pedidos
+
+ID_Pedido | ID_Cliente | Producto
+101       | 1          | Laptop
+102       | 2          | Mouse
+    </pre>
+
+    <p>
+      En este ejemplo, el campo ID_Cliente de la tabla Pedidos es una clave
+      foránea porque hace referencia al ID_Cliente de la tabla Clientes.
+    </p>
+
+    <h2>Relación entre clave primaria y clave foránea</h2>
+
+    <p>
+      Una clave foránea siempre apunta a una clave primaria de otra tabla.
+      Mientras la clave primaria identifica de manera única cada registro,
+      la clave foránea permite crear relaciones entre las tablas.
+    </p>
+
+    <p>
+      Si aún no conoces este concepto, te recomendamos leer primero nuestro
+      artículo sobre <a href="/bases-de-datos/que-es-una-clave-primaria">qué es una clave primaria.</a>
+    </p>
+
+    <h2>Ventajas de utilizar claves foráneas</h2>
+
+    <ul>
+      <li>Permiten relacionar información entre tablas.</li>
+      <li>Reducen la duplicación de datos.</li>
+      <li>Mejoran la integridad de la base de datos.</li>
+      <li>Facilitan la organización de la información.</li>
+      <li>Ayudan a mantener la consistencia de los datos.</li>
+    </ul>
+
+    <h2>Conclusión</h2>
+
+    <p>
+      Las claves foráneas son fundamentales en las bases de datos relacionales,
+      ya que permiten conectar tablas y garantizar que la información mantenga
+      relaciones válidas y coherentes.
+    </p>
+
+  </main>
+</BaseLayout>

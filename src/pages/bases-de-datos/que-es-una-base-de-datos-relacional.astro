@@ -1,0 +1,90 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+---
+
+<BaseLayout
+  title="¿Qué es una base de datos relacional? Explicación sencilla | Ingenieria Facil Web"
+  description="Aprende qué es una base de datos relacional, cómo funciona y por qué es uno de los modelos más utilizados para almacenar información."
+>
+  <main>
+    <h1>¿Qué es una base de datos relacional?</h1>
+
+    <p>
+      Una base de datos relacional es un tipo de base de datos que organiza la
+      información en tablas relacionadas entre sí mediante claves primarias y
+      claves foráneas. Este modelo permite almacenar datos de forma estructurada
+      y mantener relaciones entre diferentes conjuntos de información.
+    </p>
+
+    <h2>¿Cómo funciona una base de datos relacional?</h2>
+
+    <p>
+      La información se almacena en tablas compuestas por filas y columnas.
+      Las relaciones entre tablas permiten conectar datos relacionados sin
+      duplicar información innecesariamente.
+    </p>
+
+    <h2>Ejemplo de base de datos relacional</h2>
+
+    <p>
+      Imaginemos una tabla de clientes y otra de pedidos.
+    </p>
+
+    <pre>
+Clientes
+
+ID_Cliente | Nombre
+1          | Juan
+2          | María
+
+
+Pedidos
+
+ID_Pedido | ID_Cliente | Producto
+101       | 1          | Laptop
+102       | 2          | Mouse
+    </pre>
+
+    <p>
+      Gracias al campo ID_Cliente, ambas tablas pueden relacionarse para saber
+      qué pedidos pertenecen a cada cliente.
+    </p>
+
+    <h2>Ventajas de una base de datos relacional</h2>
+
+    <ul>
+      <li>Reduce la duplicación de datos.</li>
+      <li>Facilita la organización de la información.</li>
+      <li>Permite consultas complejas mediante SQL.</li>
+      <li>Mejora la integridad y consistencia de los datos.</li>
+      <li>Escala adecuadamente para muchos proyectos empresariales.</li>
+    </ul>
+
+    <h2>Sistemas gestores de bases de datos relacionales</h2>
+
+    <p>
+      Algunos de los gestores más utilizados son SQL Server, MySQL,
+      PostgreSQL y Oracle.
+    </p>
+
+    <h2>Relación con SQL</h2>
+
+    <p>
+      SQL es el lenguaje estándar utilizado para consultar y administrar
+      bases de datos relacionales.
+    </p>
+
+    <h2>Conclusión</h2>
+
+    <p>
+      Las bases de datos relacionales son uno de los modelos más utilizados
+      en el mundo de la tecnología gracias a su capacidad para organizar,
+      relacionar y consultar información de manera eficiente.
+    </p>
+    
+    <a href="/bases-de-datos/que-es-sql">¿Qué es SQL?</a>
+    <a href="/bases-de-datos/que-es-una-clave-primaria">¿Qué es una clave primaria?</a>
+    <a href="/bases-de-datos/que-es-una-clave-foranea">¿Qué es una clave foránea?</a>
+
+  </main>
+</BaseLayout>

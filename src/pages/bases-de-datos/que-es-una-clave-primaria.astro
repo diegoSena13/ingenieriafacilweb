@@ -1,0 +1,71 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+---
+
+<BaseLayout
+  title="¿Qué es una clave primaria? Explicación sencilla | Ingenieria Facil Web"
+  description="Aprende qué es una clave primaria en una base de datos, para qué sirve y por qué es fundamental para identificar registros."
+>
+  <main>
+    <h1>¿Qué es una clave primaria?</h1>
+
+    <p>
+      Una clave primaria (Primary Key) es un campo o conjunto de campos que
+      identifica de forma única cada registro dentro de una tabla de base de datos.
+      No puede contener valores duplicados ni valores nulos.
+    </p>
+
+    <h2>¿Para qué sirve una clave primaria?</h2>
+
+    <p>
+      La clave primaria permite identificar cada registro de manera única,
+      facilitando las búsquedas, actualizaciones y relaciones entre tablas.
+    </p>
+
+    <h2>Ejemplo de clave primaria</h2>
+
+    <p>
+      Supongamos una tabla llamada Clientes:
+    </p>
+
+    <pre>
+ID_Cliente | Nombre
+1          | Juan
+2          | María
+3          | Carlos
+    </pre>
+
+    <p>
+      En este caso, el campo ID_Cliente es la clave primaria porque cada valor
+      es único y permite identificar a cada cliente.
+    </p>
+
+    <h2>Características de una clave primaria</h2>
+
+    <ul>
+      <li>No puede tener valores repetidos.</li>
+      <li>No puede contener valores nulos.</li>
+      <li>Debe identificar un registro de forma única.</li>
+      <li>Solo puede existir una clave primaria por tabla.</li>
+    </ul>
+
+    <h2>Clave primaria y clave foránea</h2>
+
+    <p>
+      Las claves primarias suelen utilizarse junto con las claves foráneas para
+      relacionar tablas dentro de una base de datos relacional.
+    </p>
+
+    <h2>Conclusión</h2>
+
+    <p>
+      La clave primaria es uno de los conceptos fundamentales en bases de datos,
+      ya que garantiza la identificación única de cada registro y facilita la
+      organización de la información.
+    </p>
+
+    <a href="/bases-de-datos/que-es-una-clave-foranea">
+      ¿Qué es una clave foránea?
+    </a>
+  </main>
+</BaseLayout>
