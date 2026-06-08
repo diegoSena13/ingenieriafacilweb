@@ -1,0 +1,102 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+---
+
+<BaseLayout
+  title="¿Qué es SELECT en SQL? | Ingenieria Facil Web"
+  description="Aprende qué es SELECT en SQL, cómo funciona y cómo utilizarlo para consultar información almacenada en una base de datos."
+>
+  <main>
+    <h1>¿Qué es SELECT en SQL?</h1>
+
+    <p>
+      SELECT es una instrucción del lenguaje SQL utilizada para consultar y obtener
+      información almacenada en una base de datos. Es uno de los comandos más
+      importantes y utilizados, ya que permite visualizar los datos guardados en
+      una o varias tablas.
+    </p>
+
+    <h2>¿Para qué sirve SELECT?</h2>
+
+    <p>
+      La instrucción SELECT se utiliza para recuperar información específica de una
+      base de datos. Con ella es posible consultar registros completos o solamente
+      determinadas columnas según las necesidades del usuario.
+    </p>
+
+    <p>
+      Por ejemplo, una empresa puede utilizar SELECT para obtener la lista de
+      clientes registrados o consultar los productos disponibles en inventario.
+    </p>
+
+    <h2>Sintaxis básica de SELECT</h2>
+
+    <p>
+      La forma más sencilla de utilizar SELECT es indicando las columnas que se
+      desean consultar y la tabla donde se encuentran los datos.
+    </p>
+
+    <pre><code>SELECT nombre, apellido
+FROM clientes;</code></pre>
+
+    <p>
+      Esta consulta devuelve los valores almacenados en las columnas nombre y
+      apellido de la tabla clientes.
+    </p>
+
+    <h2>Consultar todas las columnas</h2>
+
+    <p>
+      Si se desea visualizar toda la información de una tabla, se puede utilizar
+      el carácter asterisco (*).
+    </p>
+
+    <pre><code>SELECT *
+FROM clientes;</code></pre>
+
+    <p>
+      Esta consulta mostrará todas las columnas y registros de la tabla.
+    </p>
+
+    <h2>Filtrar resultados con WHERE</h2>
+
+    <p>
+      SELECT suele combinarse con la cláusula WHERE para mostrar únicamente los
+      registros que cumplen una condición específica.
+    </p>
+
+    <pre><code>SELECT *
+FROM clientes
+WHERE ciudad = 'Bogotá';</code></pre>
+
+    <p>
+      En este ejemplo solo se mostrarán los clientes cuya ciudad sea Bogotá.
+    </p>
+
+    <h2>Ventajas de SELECT</h2>
+
+    <ul>
+      <li>Permite consultar información de forma rápida.</li>
+      <li>Facilita el análisis de datos almacenados.</li>
+      <li>Puede combinarse con filtros y ordenamientos.</li>
+      <li>Es compatible con la mayoría de sistemas gestores de bases de datos.</li>
+      <li>Es una de las instrucciones fundamentales de SQL.</li>
+    </ul>
+
+    <h2>¿Dónde se utiliza SELECT?</h2>
+
+    <p>
+      SELECT se utiliza en prácticamente cualquier sistema que trabaje con bases
+      de datos relacionales, incluyendo MySQL, SQL Server, PostgreSQL y Oracle
+      Database.
+    </p>
+
+    <h2>Conclusión</h2>
+
+    <p>
+      SELECT es la instrucción SQL utilizada para consultar información almacenada
+      en una base de datos. Aprender a utilizarla correctamente es uno de los
+      primeros pasos para dominar SQL y trabajar con datos de manera eficiente.
+    </p>
+  </main>
+</BaseLayout>
