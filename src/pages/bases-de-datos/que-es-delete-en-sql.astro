@@ -1,0 +1,67 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+---
+
+<BaseLayout
+  title="¿Qué es DELETE en SQL? | Ingenieria Facil Web"
+  description="Aprende qué es DELETE en SQL y cómo utilizarlo para eliminar registros de una base de datos."
+>
+  <main>
+    <h1>¿Qué es DELETE en SQL?</h1>
+
+    <p>
+      DELETE es una instrucción SQL utilizada para eliminar registros almacenados
+      dentro de una tabla de una base de datos.
+    </p>
+
+    <h2>¿Para qué sirve DELETE?</h2>
+
+    <p>
+      DELETE permite borrar información que ya no es necesaria o que debe ser
+      eliminada por motivos de mantenimiento o actualización de datos.
+    </p>
+
+    <h2>Sintaxis básica de DELETE</h2>
+
+    <pre><code>DELETE FROM clientes
+WHERE id = 1;</code></pre>
+
+    <p>
+      Esta instrucción elimina el registro cuyo identificador es 1.
+    </p>
+
+    <h2>Importancia de la cláusula WHERE</h2>
+
+    <p>
+      La cláusula WHERE permite seleccionar exactamente qué registros deben
+      eliminarse.
+    </p>
+
+    <p>
+      Si se omite WHERE, todos los registros de la tabla podrían ser eliminados.
+    </p>
+
+    <h2>Ventajas de DELETE</h2>
+
+    <ul>
+      <li>Permite eliminar información innecesaria.</li>
+      <li>Ayuda a mantener la base de datos organizada.</li>
+      <li>Es compatible con todos los sistemas gestores de bases de datos.</li>
+      <li>Facilita la administración de registros.</li>
+    </ul>
+
+    <h2>Ejemplo de uso</h2>
+
+    <p>
+      Una empresa puede utilizar DELETE para eliminar clientes duplicados,
+      registros incorrectos o información que ya no debe mantenerse almacenada.
+    </p>
+
+    <h2>Conclusión</h2>
+
+    <p>
+      DELETE es una instrucción fundamental de SQL que permite eliminar registros
+      de manera controlada y mantener la calidad de la información almacenada.
+    </p>
+  </main>
+</BaseLayout>

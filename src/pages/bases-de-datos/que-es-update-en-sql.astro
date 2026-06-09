@@ -1,0 +1,68 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+---
+
+<BaseLayout
+  title="¿Qué es UPDATE en SQL? | Ingenieria Facil Web"
+  description="Aprende qué es UPDATE en SQL y cómo utilizarlo para modificar registros existentes en una base de datos."
+>
+  <main>
+    <h1>¿Qué es UPDATE en SQL?</h1>
+
+    <p>
+      UPDATE es una instrucción SQL utilizada para modificar información que ya
+      existe dentro de una tabla.
+    </p>
+
+    <h2>¿Para qué sirve UPDATE?</h2>
+
+    <p>
+      UPDATE permite cambiar valores almacenados en una base de datos cuando
+      la información necesita ser corregida o actualizada.
+    </p>
+
+    <h2>Sintaxis básica de UPDATE</h2>
+
+    <pre><code>UPDATE clientes
+SET ciudad = 'Medellín'
+WHERE id = 1;</code></pre>
+
+    <p>
+      Esta consulta modifica la ciudad del cliente cuyo identificador es 1.
+    </p>
+
+    <h2>Importancia de la cláusula WHERE</h2>
+
+    <p>
+      La cláusula WHERE permite indicar qué registros deben modificarse.
+      Es una de las partes más importantes de la instrucción UPDATE.
+    </p>
+
+    <p>
+      Si se omite WHERE, todos los registros de la tabla podrían ser actualizados.
+    </p>
+
+    <h2>Ventajas de UPDATE</h2>
+
+    <ul>
+      <li>Permite corregir información existente.</li>
+      <li>Ayuda a mantener los datos actualizados.</li>
+      <li>Es compatible con cualquier sistema SQL.</li>
+      <li>Facilita la administración de bases de datos.</li>
+    </ul>
+
+    <h2>Ejemplo de uso</h2>
+
+    <p>
+      Una empresa puede utilizar UPDATE para modificar el salario de un empleado,
+      actualizar la dirección de un cliente o cambiar el precio de un producto.
+    </p>
+
+    <h2>Conclusión</h2>
+
+    <p>
+      UPDATE es una instrucción esencial para modificar registros existentes
+      dentro de una base de datos de forma segura y eficiente.
+    </p>
+  </main>
+</BaseLayout>
