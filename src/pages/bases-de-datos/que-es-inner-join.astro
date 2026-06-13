@@ -1,0 +1,172 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+---
+
+<BaseLayout
+  title="¿Qué es INNER JOIN en SQL? | Ingenieria Facil Web"
+  description="Aprende qué es INNER JOIN en SQL, cómo funciona y cómo utilizarlo para relacionar tablas mediante ejemplos prácticos."
+>
+  <main>
+    <h1>¿Qué es INNER JOIN en SQL?</h1>
+
+    <p>
+      INNER JOIN es una operación del lenguaje SQL utilizada para combinar
+      registros de dos o más tablas relacionadas. Este tipo de JOIN devuelve
+      únicamente los registros que tienen coincidencias en ambas tablas.
+    </p>
+
+    <p>
+      Es uno de los comandos más utilizados en bases de datos relacionales,
+      ya que permite consultar información distribuida en diferentes tablas y
+      mostrarla en un único resultado.
+    </p>
+
+    <h2>¿Para qué sirve INNER JOIN?</h2>
+
+    <p>
+      En una base de datos relacional es común que la información se encuentre
+      separada en varias tablas para evitar duplicidades y mejorar la organización
+      de los datos.
+    </p>
+
+    <p>
+      INNER JOIN permite unir esas tablas mediante una relación común, generalmente
+      una clave primaria y una clave foránea.
+    </p>
+
+    <p>
+      Gracias a esta operación es posible obtener información más completa sin
+      necesidad de almacenar los mismos datos varias veces.
+    </p>
+
+    <h2>¿Cómo funciona INNER JOIN?</h2>
+
+    <p>
+      INNER JOIN compara una columna de una tabla con una columna de otra tabla.
+      Cuando encuentra valores coincidentes, muestra el registro en el resultado.
+    </p>
+
+    <p>
+      Si no existe coincidencia, ese registro no aparecerá en la consulta.
+    </p>
+
+    <h2>Ejemplo práctico</h2>
+
+    <p>
+      Supongamos que tenemos dos tablas: clientes y pedidos.
+    </p>
+
+    <h3>Tabla clientes</h3>
+
+    <pre><code>
+id | nombre
+--------------
+1  | Juan
+2  | María
+3  | Carlos
+    </code></pre>
+
+    <h3>Tabla pedidos</h3>
+
+    <pre><code>
+id | cliente_id | producto
+---------------------------
+1  | 1          | Laptop
+2  | 1          | Mouse
+3  | 2          | Teclado
+    </code></pre>
+
+    <p>
+      Observa que la columna cliente_id de la tabla pedidos hace referencia al
+      id de la tabla clientes.
+    </p>
+
+    <h2>Consulta con INNER JOIN</h2>
+
+    <pre><code>SELECT clientes.nombre,
+       pedidos.producto
+FROM clientes
+INNER JOIN pedidos
+ON clientes.id = pedidos.cliente_id;</code></pre>
+
+    <h2>Resultado obtenido</h2>
+
+    <pre><code>
+nombre | producto
+------------------
+Juan   | Laptop
+Juan   | Mouse
+María  | Teclado
+    </code></pre>
+
+    <p>
+      Como Carlos no tiene pedidos registrados, no aparece en el resultado.
+      Esto ocurre porque INNER JOIN solamente devuelve registros que tienen
+      coincidencias en ambas tablas.
+    </p>
+
+    <h2>¿Qué significa la cláusula ON?</h2>
+
+    <p>
+      La cláusula ON indica la condición utilizada para relacionar las tablas.
+    </p>
+
+    <pre><code>ON clientes.id = pedidos.cliente_id</code></pre>
+
+    <p>
+      Esta condición establece que el id del cliente debe coincidir con el
+      cliente_id almacenado en la tabla pedidos.
+    </p>
+
+    <h2>Ventajas de INNER JOIN</h2>
+
+    <ul>
+      <li>Permite combinar información de varias tablas.</li>
+      <li>Evita la duplicación innecesaria de datos.</li>
+      <li>Facilita consultas complejas.</li>
+      <li>Mejora la organización de las bases de datos.</li>
+      <li>Es compatible con MySQL, SQL Server, PostgreSQL y Oracle.</li>
+    </ul>
+
+    <h2>¿Cuándo utilizar INNER JOIN?</h2>
+
+    <p>
+      INNER JOIN debe utilizarse cuando únicamente se necesitan registros que
+      existan en ambas tablas.
+    </p>
+
+    <p>
+      Algunos ejemplos comunes son:
+    </p>
+
+    <ul>
+      <li>Mostrar clientes que han realizado compras.</li>
+      <li>Consultar empleados asignados a un proyecto.</li>
+      <li>Visualizar estudiantes inscritos en cursos.</li>
+      <li>Relacionar productos con categorías.</li>
+    </ul>
+
+    <h2>Diferencia entre INNER JOIN y LEFT JOIN</h2>
+
+    <p>
+      La principal diferencia es que INNER JOIN muestra únicamente las
+      coincidencias entre tablas, mientras que LEFT JOIN devuelve todos los
+      registros de la tabla izquierda aunque no tengan relación en la tabla
+      derecha.
+    </p>
+
+    <p>
+      Por esta razón, INNER JOIN suele utilizarse cuando se desea trabajar
+      exclusivamente con información relacionada.
+    </p>
+
+    <h2>Conclusión</h2>
+
+    <p>
+      INNER JOIN es una de las operaciones más importantes de SQL. Permite
+      relacionar tablas y obtener información completa a partir de diferentes
+      fuentes de datos. Dominar INNER JOIN es un paso fundamental para trabajar
+      con bases de datos relacionales y desarrollar consultas profesionales.
+    </p>
+  </main>
+</BaseLayout>

@@ -1,0 +1,227 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+---
+
+<BaseLayout
+  title="¿Qué es un JOIN en SQL? | Ingenieria Facil Web"
+  description="Aprende qué es un JOIN en SQL, cómo funciona y cuáles son los tipos de JOIN más utilizados para relacionar tablas."
+>
+  <main>
+    <h1>¿Qué es un JOIN en SQL?</h1>
+
+    <p>
+      JOIN es una operación del lenguaje SQL que permite combinar información
+      almacenada en dos o más tablas relacionadas dentro de una base de datos.
+    </p>
+
+    <p>
+      Gracias a los JOIN, es posible consultar datos distribuidos en diferentes
+      tablas y presentarlos en un único resultado. Esta es una de las
+      características más importantes de las bases de datos relacionales.
+    </p>
+
+    <h2>¿Para qué sirve un JOIN?</h2>
+
+    <p>
+      En una base de datos bien diseñada, la información suele estar dividida en
+      varias tablas para evitar duplicidades y mejorar la organización de los
+      datos.
+    </p>
+
+    <p>
+      Sin embargo, muchas veces es necesario consultar información que se
+      encuentra repartida en diferentes tablas. Para resolver este problema se
+      utilizan los JOIN.
+    </p>
+
+    <p>
+      Un JOIN permite relacionar registros utilizando columnas que tienen algún
+      vínculo entre sí, generalmente mediante claves primarias y claves
+      foráneas.
+    </p>
+
+    <h2>¿Cómo funciona un JOIN?</h2>
+
+    <p>
+      Un JOIN compara valores de una columna en una tabla con valores de una
+      columna en otra tabla. Cuando encuentra coincidencias, combina la
+      información y la muestra como un único conjunto de resultados.
+    </p>
+
+    <p>
+      La relación entre las tablas se establece mediante la cláusula ON.
+    </p>
+
+    <h2>Ejemplo práctico</h2>
+
+    <p>
+      Supongamos que tenemos una tabla de clientes y una tabla de pedidos.
+    </p>
+
+    <h3>Tabla clientes</h3>
+
+    <pre><code>
+id | nombre
+--------------
+1  | Juan
+2  | María
+3  | Carlos
+    </code></pre>
+
+    <h3>Tabla pedidos</h3>
+
+    <pre><code>
+id | cliente_id | producto
+---------------------------
+1  | 1          | Laptop
+2  | 1          | Mouse
+3  | 2          | Teclado
+    </code></pre>
+
+    <p>
+      La columna cliente_id de la tabla pedidos contiene el identificador del
+      cliente que realizó cada compra.
+    </p>
+
+    <h2>Consulta utilizando JOIN</h2>
+
+    <pre><code>SELECT clientes.nombre,
+       pedidos.producto
+FROM clientes
+JOIN pedidos
+ON clientes.id = pedidos.cliente_id;</code></pre>
+
+    <h2>Resultado</h2>
+
+    <pre><code>
+nombre | producto
+------------------
+Juan   | Laptop
+Juan   | Mouse
+María  | Teclado
+    </code></pre>
+
+    <p>
+      Como puede observarse, SQL combina la información de ambas tablas para
+      mostrar el nombre del cliente junto con los productos comprados.
+    </p>
+
+    <h2>Tipos de JOIN más utilizados</h2>
+
+    <p>
+      SQL ofrece varios tipos de JOIN para diferentes necesidades.
+    </p>
+
+    <h3>INNER JOIN</h3>
+
+    <p>
+      Devuelve únicamente los registros que tienen coincidencias en ambas
+      tablas.
+    </p>
+
+    <pre><code>SELECT *
+FROM clientes
+INNER JOIN pedidos
+ON clientes.id = pedidos.cliente_id;</code></pre>
+
+    <h3>LEFT JOIN</h3>
+
+    <p>
+      Devuelve todos los registros de la tabla izquierda y las coincidencias de
+      la tabla derecha.
+    </p>
+
+    <pre><code>SELECT *
+FROM clientes
+LEFT JOIN pedidos
+ON clientes.id = pedidos.cliente_id;</code></pre>
+
+    <h3>RIGHT JOIN</h3>
+
+    <p>
+      Devuelve todos los registros de la tabla derecha y las coincidencias de la
+      tabla izquierda.
+    </p>
+
+    <pre><code>SELECT *
+FROM clientes
+RIGHT JOIN pedidos
+ON clientes.id = pedidos.cliente_id;</code></pre>
+
+    <h2>Ventajas de utilizar JOIN</h2>
+
+    <ul>
+      <li>Permite combinar información relacionada.</li>
+      <li>Reduce la duplicación de datos.</li>
+      <li>Facilita consultas complejas.</li>
+      <li>Mejora la organización de las bases de datos.</li>
+      <li>Ayuda a obtener reportes más completos.</li>
+    </ul>
+
+    <h2>¿Dónde se utilizan los JOIN?</h2>
+
+    <p>
+      Los JOIN se utilizan en prácticamente cualquier sistema que trabaje con
+      bases de datos relacionales.
+    </p>
+
+    <p>
+      Algunos ejemplos son:
+    </p>
+
+    <ul>
+      <li>Sistemas de ventas.</li>
+      <li>Aplicaciones bancarias.</li>
+      <li>Plataformas educativas.</li>
+      <li>Sistemas de recursos humanos.</li>
+      <li>Aplicaciones empresariales.</li>
+    </ul>
+
+    <h2>Errores comunes al utilizar JOIN</h2>
+
+    <ul>
+      <li>No definir correctamente la condición ON.</li>
+      <li>Relacionar columnas incompatibles.</li>
+      <li>Generar duplicados por relaciones incorrectas.</li>
+      <li>Olvidar filtrar resultados cuando es necesario.</li>
+    </ul>
+
+    <h2>Artículos relacionados</h2>
+
+    <ul>
+      <li>
+        <a href="/bases-de-datos/que-es-inner-join">
+          ¿Qué es INNER JOIN?
+        </a>
+      </li>
+
+      <li>
+        <a href="/bases-de-datos/que-es-left-join">
+          ¿Qué es LEFT JOIN?
+        </a>
+      </li>
+
+      <li>
+        <a href="/bases-de-datos/que-es-right-join">
+          ¿Qué es RIGHT JOIN?
+        </a>
+      </li>
+
+      <li>
+        <a href="/bases-de-datos/que-es-una-clave-foranea">
+          ¿Qué es una clave foránea?
+        </a>
+      </li>
+    </ul>
+
+    <h2>Conclusión</h2>
+
+    <p>
+      JOIN es una de las herramientas más importantes del lenguaje SQL. Permite
+      relacionar información almacenada en diferentes tablas y obtener
+      resultados completos a partir de datos distribuidos. Aprender a utilizar
+      correctamente los JOIN es fundamental para trabajar con bases de datos
+      relacionales como MySQL, SQL Server, PostgreSQL y Oracle Database.
+    </p>
+  </main>
+</BaseLayout>

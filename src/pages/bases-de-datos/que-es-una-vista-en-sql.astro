@@ -1,0 +1,212 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+---
+
+<BaseLayout
+  title="¿Qué es una Vista en SQL? | Ingenieria Facil Web"
+  description="Aprende qué es una vista en SQL, cómo funciona y cómo utilizarla para simplificar consultas complejas mediante ejemplos prácticos."
+>
+  <main>
+    <h1>¿Qué es una Vista en SQL?</h1>
+
+    <p>
+      Una vista (View) es un objeto de base de datos que funciona como una
+      tabla virtual. Su contenido se genera a partir del resultado de una
+      consulta SQL almacenada.
+    </p>
+
+    <p>
+      Aunque una vista se comporta de forma similar a una tabla, en realidad no
+      almacena los datos por sí misma. En su lugar, obtiene la información de
+      una o varias tablas cada vez que es consultada.
+    </p>
+
+    <h2>¿Para qué sirve una vista?</h2>
+
+    <p>
+      Las vistas permiten simplificar consultas complejas y reutilizar código
+      SQL. En lugar de escribir una consulta extensa cada vez que se necesita
+      determinada información, se puede crear una vista y consultarla como si
+      fuera una tabla normal.
+    </p>
+
+    <p>
+      Esto facilita el trabajo de desarrolladores, administradores de bases de
+      datos y analistas de información.
+    </p>
+
+    <h2>¿Cómo funciona una vista?</h2>
+
+    <p>
+      Una vista almacena una consulta SQL. Cuando un usuario realiza una
+      consulta sobre la vista, el sistema ejecuta automáticamente la consulta
+      original y devuelve los resultados.
+    </p>
+
+    <p>
+      De esta forma, la vista actúa como una capa intermedia entre el usuario y
+      las tablas reales de la base de datos.
+    </p>
+
+    <h2>Sintaxis básica para crear una vista</h2>
+
+    <pre><code>CREATE VIEW clientes_activos AS
+SELECT *
+FROM clientes
+WHERE activo = 1;</code></pre>
+
+    <p>
+      Esta instrucción crea una vista llamada clientes_activos que mostrará
+      únicamente los clientes que tienen el campo activo con valor 1.
+    </p>
+
+    <h2>Consultar una vista</h2>
+
+    <p>
+      Una vez creada la vista, puede consultarse igual que una tabla.
+    </p>
+
+    <pre><code>SELECT *
+FROM clientes_activos;</code></pre>
+
+    <p>
+      SQL ejecutará automáticamente la consulta definida dentro de la vista y
+      mostrará los resultados correspondientes.
+    </p>
+
+    <h2>Ejemplo práctico</h2>
+
+    <p>
+      Supongamos que una empresa tiene una tabla llamada empleados con la
+      siguiente información:
+    </p>
+
+    <pre><code>
+id | nombre | cargo      | activo
+----------------------------------
+1  | Juan   | Analista   | 1
+2  | María  | Desarrollador | 1
+3  | Carlos | Diseñador  | 0
+    </code></pre>
+
+    <p>
+      Si frecuentemente se necesita consultar únicamente los empleados activos,
+      puede crearse la siguiente vista:
+    </p>
+
+    <pre><code>CREATE VIEW empleados_activos AS
+SELECT nombre, cargo
+FROM empleados
+WHERE activo = 1;</code></pre>
+
+    <p>
+      Después será posible obtener la información mediante una consulta mucho
+      más sencilla:
+    </p>
+
+    <pre><code>SELECT *
+FROM empleados_activos;</code></pre>
+
+    <h2>Ventajas de las vistas</h2>
+
+    <ul>
+      <li>Simplifican consultas complejas.</li>
+      <li>Permiten reutilizar código SQL.</li>
+      <li>Mejoran la organización de la base de datos.</li>
+      <li>Facilitan la generación de reportes.</li>
+      <li>Ayudan a controlar el acceso a la información.</li>
+    </ul>
+
+    <h2>Seguridad mediante vistas</h2>
+
+    <p>
+      Una ventaja importante de las vistas es que pueden utilizarse para
+      restringir la información que los usuarios pueden consultar.
+    </p>
+
+    <p>
+      Por ejemplo, una empresa podría permitir que ciertos empleados consulten
+      únicamente nombres y cargos, sin acceso a salarios u otra información
+      confidencial almacenada en la tabla original.
+    </p>
+
+    <h2>¿Las vistas almacenan datos?</h2>
+
+    <p>
+      Normalmente las vistas no almacenan datos propios. Cada vez que son
+      consultadas, obtienen la información actualizada desde las tablas de
+      origen.
+    </p>
+
+    <p>
+      Esto significa que si los datos cambian en la tabla original, los cambios
+      también se reflejarán automáticamente en la vista.
+    </p>
+
+    <h2>Diferencia entre una tabla y una vista</h2>
+
+    <table>
+      <tr>
+        <th>Tabla</th>
+        <th>Vista</th>
+      </tr>
+      <tr>
+        <td>Almacena datos físicamente.</td>
+        <td>Almacena una consulta.</td>
+      </tr>
+      <tr>
+        <td>Puede contener millones de registros.</td>
+        <td>Muestra datos obtenidos de tablas.</td>
+      </tr>
+      <tr>
+        <td>Se utiliza para guardar información.</td>
+        <td>Se utiliza para consultar información.</td>
+      </tr>
+    </table>
+
+    <h2>¿Cuándo utilizar una vista?</h2>
+
+    <p>
+      Las vistas son especialmente útiles cuando:
+    </p>
+
+    <ul>
+      <li>Se ejecutan consultas complejas con frecuencia.</li>
+      <li>Se desea simplificar reportes.</li>
+      <li>Es necesario ocultar ciertas columnas a los usuarios.</li>
+      <li>Se trabaja con múltiples tablas relacionadas.</li>
+      <li>Se quiere reutilizar una misma consulta en diferentes procesos.</li>
+    </ul>
+
+    <h2>Ejemplos de uso en empresas</h2>
+
+    <p>
+      Las empresas utilizan vistas para generar reportes de ventas, consultar
+      clientes activos, mostrar inventarios disponibles y presentar información
+      resumida para los diferentes departamentos de la organización.
+    </p>
+
+    <p>
+      Gracias a las vistas, los usuarios pueden acceder rápidamente a la
+      información que necesitan sin tener que conocer la estructura completa de
+      la base de datos.
+    </p>
+
+    <h2>Compatibilidad de las vistas</h2>
+
+    <p>
+      Las vistas son compatibles con los principales sistemas gestores de bases
+      de datos, incluyendo MySQL, SQL Server, PostgreSQL y Oracle Database.
+    </p>
+
+    <h2>Conclusión</h2>
+
+    <p>
+      Una vista en SQL es una tabla virtual basada en una consulta almacenada.
+      Permite simplificar consultas complejas, reutilizar código, mejorar la
+      seguridad y facilitar el acceso a la información. Por estas razones, las
+      vistas son una herramienta fundamental en el diseño y administración de
+      bases de datos modernas.
+    </p>
+  </main>
+</BaseLayout>

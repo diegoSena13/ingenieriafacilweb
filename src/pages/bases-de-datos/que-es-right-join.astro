@@ -1,0 +1,202 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+---
+
+<BaseLayout
+  title="¿Qué es RIGHT JOIN en SQL? | Ingenieria Facil Web"
+  description="Aprende qué es RIGHT JOIN en SQL, cómo funciona y cómo utilizarlo para mostrar todos los registros de la tabla derecha."
+>
+  <main>
+    <h1>¿Qué es RIGHT JOIN en SQL?</h1>
+
+    <p>
+      RIGHT JOIN es una operación del lenguaje SQL utilizada para combinar
+      información de dos tablas relacionadas. Su principal característica es
+      que devuelve todos los registros de la tabla ubicada a la derecha de la
+      consulta y únicamente las coincidencias encontradas en la tabla izquierda.
+    </p>
+
+    <p>
+      Cuando un registro de la tabla derecha no tiene una coincidencia en la
+      tabla izquierda, igualmente aparecerá en el resultado y los valores de la
+      tabla izquierda se mostrarán como NULL.
+    </p>
+
+    <h2>¿Para qué sirve RIGHT JOIN?</h2>
+
+    <p>
+      RIGHT JOIN se utiliza cuando la información más importante se encuentra en
+      la tabla derecha y se desea mostrar todos sus registros, incluso si no
+      tienen datos relacionados en la otra tabla.
+    </p>
+
+    <p>
+      Es especialmente útil para auditorías, reportes y análisis de información
+      donde se necesita identificar registros que no tienen relación con otra
+      tabla.
+    </p>
+
+    <h2>¿Cómo funciona RIGHT JOIN?</h2>
+
+    <p>
+      SQL toma todos los registros de la tabla derecha y busca coincidencias en
+      la tabla izquierda utilizando una condición definida mediante la cláusula
+      ON.
+    </p>
+
+    <p>
+      Si encuentra coincidencias, mostrará información de ambas tablas. Si no
+      las encuentra, igualmente mostrará el registro de la tabla derecha.
+    </p>
+
+    <h2>Ejemplo práctico</h2>
+
+    <p>
+      Supongamos que una empresa tiene una tabla de clientes y una tabla de
+      pedidos.
+    </p>
+
+    <h3>Tabla clientes</h3>
+
+    <pre><code>
+id | nombre
+--------------
+1  | Juan
+2  | María
+3  | Carlos
+    </code></pre>
+
+    <h3>Tabla pedidos</h3>
+
+    <pre><code>
+id | cliente_id | producto
+---------------------------
+1  | 1          | Laptop
+2  | 1          | Mouse
+3  | 2          | Teclado
+4  | 5          | Monitor
+    </code></pre>
+
+    <p>
+      Observa que existe un pedido con cliente_id igual a 5, pero no existe un
+      cliente con ese identificador en la tabla clientes.
+    </p>
+
+    <h2>Consulta utilizando RIGHT JOIN</h2>
+
+    <pre><code>SELECT clientes.nombre,
+       pedidos.producto
+FROM clientes
+RIGHT JOIN pedidos
+ON clientes.id = pedidos.cliente_id;</code></pre>
+
+    <h2>Resultado</h2>
+
+    <pre><code>
+nombre | producto
+------------------
+Juan   | Laptop
+Juan   | Mouse
+María  | Teclado
+NULL   | Monitor
+    </code></pre>
+
+    <p>
+      Como el pedido "Monitor" no tiene un cliente relacionado, igualmente
+      aparece en el resultado porque RIGHT JOIN devuelve todos los registros de
+      la tabla derecha.
+    </p>
+
+    <h2>¿Qué significa NULL en el resultado?</h2>
+
+    <p>
+      NULL indica que no existe un valor relacionado en la tabla izquierda.
+    </p>
+
+    <p>
+      En este ejemplo, el pedido del monitor no tiene un cliente asociado, por
+      lo que SQL muestra NULL en la columna nombre.
+    </p>
+
+    <h2>Diferencia entre RIGHT JOIN e INNER JOIN</h2>
+
+    <p>
+      INNER JOIN devuelve únicamente los registros que tienen coincidencias en
+      ambas tablas.
+    </p>
+
+    <p>
+      RIGHT JOIN, por el contrario, devuelve todos los registros de la tabla
+      derecha, tengan o no coincidencias.
+    </p>
+
+    <h2>Diferencia entre RIGHT JOIN y LEFT JOIN</h2>
+
+    <p>
+      Ambos comandos son muy similares. La diferencia principal es la tabla que
+      se considera prioritaria.
+    </p>
+
+    <ul>
+      <li>
+        LEFT JOIN devuelve todos los registros de la tabla izquierda.
+      </li>
+      <li>
+        RIGHT JOIN devuelve todos los registros de la tabla derecha.
+      </li>
+    </ul>
+
+    <p>
+      En muchos proyectos los desarrolladores suelen utilizar LEFT JOIN con más
+      frecuencia, ya que resulta más intuitivo leer las consultas de izquierda a
+      derecha.
+    </p>
+
+    <h2>¿Cuándo utilizar RIGHT JOIN?</h2>
+
+    <p>
+      Algunos casos comunes son:
+    </p>
+
+    <ul>
+      <li>Mostrar todos los pedidos y sus clientes asociados.</li>
+      <li>Detectar registros huérfanos en una base de datos.</li>
+      <li>Generar reportes de auditoría.</li>
+      <li>Validar la integridad de la información.</li>
+      <li>Analizar relaciones incompletas entre tablas.</li>
+    </ul>
+
+    <h2>Ventajas de RIGHT JOIN</h2>
+
+    <ul>
+      <li>Permite visualizar todos los registros de la tabla derecha.</li>
+      <li>Ayuda a detectar datos sin relación.</li>
+      <li>Facilita tareas de auditoría y análisis.</li>
+      <li>Mejora la calidad de los reportes.</li>
+      <li>Es compatible con MySQL, SQL Server, PostgreSQL y Oracle.</li>
+    </ul>
+
+    <h2>Ejemplo en una empresa</h2>
+
+    <p>
+      Una empresa podría utilizar RIGHT JOIN para obtener una lista completa de
+      pedidos registrados y verificar cuáles no tienen un cliente asociado por
+      errores de captura o problemas de integridad referencial.
+    </p>
+
+    <p>
+      Esto ayuda a detectar inconsistencias y mejorar la calidad de los datos
+      almacenados.
+    </p>
+
+    <h2>Conclusión</h2>
+
+    <p>
+      RIGHT JOIN es una operación SQL que permite mostrar todos los registros de
+      la tabla derecha junto con las coincidencias encontradas en la tabla
+      izquierda. Aunque suele utilizarse menos que INNER JOIN o LEFT JOIN, es
+      una herramienta muy útil para auditorías, análisis de datos y detección de
+      relaciones faltantes en una base de datos.
+    </p>
+  </main>
+</BaseLayout>
